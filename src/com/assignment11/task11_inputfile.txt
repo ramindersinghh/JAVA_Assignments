@@ -1,0 +1,77 @@
+"Map.get" and value test should be replaced with single method call
+ 
+Code smell
+ 
+Major
+java:S3824
+ 
+It's a common pattern to test the result of a java.util.Map.get() against null or calling java.util.Map.containsKey() before proceeding with adding or changing the value in the map. However the java.util.Map API offers a significantly better alternative in the form of the computeIfPresent() and computeIfAbsent() methods. Using these instead leads to cleaner and more readable code.
+Note that this rule is automatically disabled when the project's sonar.java.source is not 8.
+Noncompliant Code Example
+  V value = map.get(key);  if (value == null) { // Noncompliant    value = V.createFor(key);    if (value != null) {      map.put(key, value);    }  }  if (!map.containsKey(key)) { // Noncompliant    value = V.createFor(key);    if (value != null) {      map.put(key, value);    }  }  return value;  
+Compliant Solution
+  return map.computeIfAbsent(key, k -> V.createFor(k));  
+Exceptions
+This rule will not raise an issue when trying to add null to a map, because computeIfAbsent will not add the entry if the value returned by the function is null.
+See also
+{rule:java:S6104} - Map "computeIfAbsent()" and "computeIfPresent()" should not be used to add "null" values.
+
+The code
+Here is the crucial code from each method.
+
+ContainsKey
+import java.util.HashMap;
+import java.util.Map;
+...
+Map<String, Integer> freq = new HashMap<String, Integer>();
+...
+int count = freq.containsKey(word) ? freq.get(word) : 0;
+freq.put(word, count + 1);
+TestForNull
+import java.util.HashMap;
+import java.util.Map;
+...
+Map<String, Integer> freq = new HashMap<String, Integer>();
+...
+Integer count = freq.get(word);
+if (count == null) {
+    freq.put(word, 1);
+}
+else {
+    freq.put(word, count + 1);
+}
+AtomicLong
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicLong;
+...
+final ConcurrentMap<String, AtomicLong> map =
+    new ConcurrentHashMap<String, AtomicLong>();
+...
+map.putIfAbsent(word, new AtomicLong(0));
+map.get(word).incrementAndGet();
+Trove
+import gnu.trove.TObjectIntHashMap;
+...
+TObjectIntHashMap<String> freq = new TObjectIntHashMap<String>();
+...
+freq.adjustOrPutValue(word, 1, 1);
+MutableInt
+import java.util.HashMap;
+import java.util.Map;
+...
+class MutableInt {
+  int value = 1; // note that we start at 1 since we're counting
+  public void increment () { ++value;      }
+  public int  get ()       { return value; }
+}
+...
+Map<String, MutableInt> freq = new HashMap<String, MutableInt>();
+...
+MutableInt count = freq.get(word);
+if (count == null) {
+    freq.put(word, new MutableInt());
+}
+else {
+    count.increment();
+}
