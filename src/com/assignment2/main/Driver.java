@@ -1,7 +1,7 @@
 package com.assignment2.main;
 
 import com.assignment2.utility.CheckAlphabets;
-import com.assignment2.utility.SimpleJavaStream;
+import com.assignment2.extra.SimpleJavaStream;
 
 import java.util.Scanner;
 

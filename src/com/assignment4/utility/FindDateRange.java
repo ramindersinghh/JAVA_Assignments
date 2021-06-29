@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 public class FindDateRange {
 
     private LocalDate signupDate;
-    private LocalDate anniversaryDate;
     private LocalDate currentDate;
     private LocalDate lowestPossibleDateForKYC;
     private LocalDate highestPossibleDateForKYC;
@@ -32,6 +31,7 @@ public class FindDateRange {
     }
 
     public void calculateRange(){
+        LocalDate anniversaryDate;
         if(signupDate.isAfter(currentDate)) {
             rangePossible = false;
             return;

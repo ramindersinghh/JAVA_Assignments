@@ -1,4 +1,4 @@
-package com.assignment2.utility;
+package com.assignment2.extra;
 
 import java.util.*;
 import java.util.stream.Collectors;
