@@ -4,7 +4,7 @@ public class Student {
     int id;
     String name;
     int age;
-    String gender;
+    Gender gender;
     String engDepartment;
     int yearOfEnrollment ;
     double perTillDate;
@@ -21,7 +21,7 @@ public class Student {
         return age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -37,7 +37,7 @@ public class Student {
         return perTillDate;
     }
 
-    public Student(int id, String name, int age, String gender, String engDepartment, int yearOfEnrollment, double perTillDate) {
+    public Student(int id, String name, int age, Gender gender, String engDepartment, int yearOfEnrollment, double perTillDate) {
         this.id = id;
         this.name = name;
         this.age = age;
