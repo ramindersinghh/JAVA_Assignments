@@ -1,12 +1,11 @@
 package com.assignment8.main;
 
 import com.assignment8.utility.Employee;
-import com.assignment8.utility.EmployeeNotFoundException;
 import com.assignment8.utility.InvalidAgeException;
 
 public class Driver {
     public static void main(String[] args) throws InvalidAgeException {
-        Employee employee = new Employee();
+        var employee = new Employee();
 
         try {
             employee.setEmpID(-1);

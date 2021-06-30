@@ -1,6 +1,6 @@
-package com.assignment5.Raminder.assignment;
+package com.assignment5.raminder.assignment;
 
-public class data {
+public class Data {
     int employee_id;
     char gender;
     public void printVariables(){

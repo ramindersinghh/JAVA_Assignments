@@ -1,6 +1,6 @@
 package com.assignment7.task3;
 
-public class Driver_task3 {
+public class DriverTask3 {
     public static void showBehindCar(CameraSwitch cameraSwitch){
         cameraSwitch.turnCameraOn();
     }

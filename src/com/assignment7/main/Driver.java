@@ -12,7 +12,7 @@ import com.assignment7.task2.Unicycle;
 public class Driver {
     public static void main(String[] args) {
         // Task 1
-        Rodent rodent[]=new Rodent[3];
+        Rodent[] rodent=new Rodent[3];
         rodent[0]=new Mouse();
         rodent[1]=new Gerbil();
         rodent[2]=new Hamster();
@@ -28,7 +28,7 @@ public class Driver {
 
         //Task2
         //Upcast
-        Cycle cycles[]=new Cycle[3];
+        Cycle[] cycles=new Cycle[3];
         cycles[0]=new Unicycle();
         cycles[1]=new Bicycle();
         cycles[2]=new Tricycle();

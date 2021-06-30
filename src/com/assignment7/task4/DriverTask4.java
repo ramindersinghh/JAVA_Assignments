@@ -40,9 +40,9 @@ class TriFactory implements CycleFactory{
     }
 }
 
-public class Driver_task4 {
+public class DriverTask4 {
     public static void rideCycle(CycleFactory factory){
-        Cycle c = factory.getCycle();
+        var c = factory.getCycle();
         c.ride();
     }
     public static void main(String[] args) {

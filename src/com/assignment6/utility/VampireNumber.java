@@ -3,11 +3,16 @@ package com.assignment6.utility;
 import java.util.Arrays;
 
 public class VampireNumber {
+    private VampireNumber() {
+    }
+
     public static void printFirst100VampireNos() {
-        int HUNDRED=100;
+        final int HUNDRED=100;
         int count=0;
-        String[] str1, str2;
-        int pro, sum = 0;
+        String[] str1;
+        String[] str2;
+        int pro;
+        int sum = 0;
         for (int i = 10; i < 1000; i++) {
             for (int j = 10; j < 1000; j++) {
                 pro = i * j;

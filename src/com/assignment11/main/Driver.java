@@ -9,7 +9,7 @@ public class Driver {
     public static void main(String[] args) throws IOException {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter filename with Path to count characters(Enter exit to end) :");
-        String fileName= scanner.nextLine();
+        String fileName;
         //"C:\\Users\\Mayank\\Desktop\\1.txt"
         fileName="/home/ramins/IdeaProjects/JAVA_Assignments/src/com/assignment11/task11_inputfile.txt";
         AnalyzeFile analyzeFile=new AnalyzeFile();

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Driver {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        var scanner=new Scanner(System.in);
         String input= scanner.nextLine();
         System.out.println("Enter String to match with Pattern(Enter exit to end) :");
         while(!input.equals("exit")) {

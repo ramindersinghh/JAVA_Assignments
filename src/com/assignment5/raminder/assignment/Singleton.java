@@ -1,9 +1,9 @@
-package com.assignment5.Raminder.assignment;
+package com.assignment5.raminder.assignment;
 
-public class singleton {
+public class Singleton {
     String Department;
-    public static singleton staticMethod(String Department){
-        singleton singleton_object=new singleton();
+    public static Singleton staticMethod(String Department){
+        Singleton singleton_object=new Singleton();
         singleton_object.Department=Department;
         return singleton_object;
     }

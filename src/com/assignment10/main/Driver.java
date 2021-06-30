@@ -5,7 +5,7 @@ import com.assignment10.utility.SListIterator;
 
 public class Driver {
     public static void main(String[] args) {
-        SList<String> sl = new SList<String>();
+        SList<String> sl = new SList<>();
         System.out.println(sl);
         SListIterator<String> slIter = sl.iterator();
         System.out.println("inserting \"Hi\"");
@@ -37,7 +37,7 @@ public class Driver {
         slIter2.remove();
         System.out.println(sl);
         System.out.println("removing \"Hello\"");
-        SListIterator slIter3 = sl.iterator();
+        SListIterator<String> slIter3 = sl.iterator();
         slIter3.remove();
         System.out.println(sl);
     }

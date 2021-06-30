@@ -1,8 +1,13 @@
 package com.assignment8.utility;
 
 public class Employee {
-    int empID, salary,age;
-    String name, address, department, email;
+    int empID;
+    int salary;
+    int age;
+    String name;
+    String address;
+    String department;
+    String email;
 
     //Getter and setters for getting and setting properties
 
@@ -62,15 +67,15 @@ public class Employee {
                 + ", department = " + department + ", email = " + email + "]";
     }
     public boolean isEarlyEmployee() throws EmployeeNotFoundException {
+        boolean result=false;
         if(empID<1) {
             throw new EmployeeNotFoundException(
                     "Invalid employee with ID " + empID);
         }
         if (empID>=1 && empID<=100) {
-            return true;
-        }else {
-            return false;
+            result= true;
         }
+        return false;
     }
 }
 
